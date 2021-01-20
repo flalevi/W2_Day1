@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tina The Best</title>
+    <style>
+        body {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 100vh;
+        }
+
+        .song-card {
+            width: 450px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: auto;
+            box-shadow: 0 1px 5px rgb(50, 47, 47);
+            transition: box-shadow 200ms;
+            position: relative;
+            color: white;
+            user-select: none;
+        }
+ 
+        .song-card::before {
+            content: "";
+            display: block;
+            position: absolute; 
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to top, black 0%, transparent 40%);
+            z-index: 1;
+        }
+
+        .song-card .song-card-image {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .song-card:hover {
+           box-shadow: 0 6px 20px black;
+        }
+
+        .song-card:hover .song-class-info {
+           transform: translateX(100px);
+           opacity: 0;
+        }
+
+        .song-card:hover .song-card-play {
+           transform: translateX(0px);
+        }
+
+        .song-class-info {
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           text-align: center;
+           right: 0;
+           padding: 5px 10px;
+           z-index: 5;
+           user-select: none;
+           transition: transform 0.2s, opacity .2s;
+        }
+
+        .song-card-artist {
+           font-size: 1em;
+           font-weight: bold;
+           line-height: 1.2em;
+        }
+
+        .song-card-album {
+           font-size: 0.7em;
+           line-height: 1em; 
+        }
+
+        .song-card-title {
+           font-size: 1.3em;
+           line-height: 1.5em; 
+        }
+
+        .song-card-artist,
+        .song-card-album,
+        .song-card-title {
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow: ellipsis; 
+        }
+
+        .song-card-play {
+           width: 50px;
+           height: 50px; 
+           background-color: rgb(95, 157, 33);
+           position: absolute;
+           bottom: 10px;
+           left: 10px;
+           border-radius: 50%;
+           z-index: 6;
+           cursor: pointer;
+           transform: translateX(-60px);
+           transition: transform .2s;
+        }
+
+        .song-card-play::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 0;  
+            right: 0;          
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            border-style: solid;
+            border-width: 7px 0 7px 10px;
+            border-color: transparent transparent transparent white;
+        }
+    </style>
+</head>
+<body>
+    <div class="song-card">
+        <img 
+        src="Tina.png" class="song-card-image" alt="Tina Turner picture"
+        />
+        <div class="song-class-info">
+            <div class="song-card-artist">Tina Turner</div>
+            <div class="song-card-album">No idea</div>
+            <div class="song-card-title">Let's rock this party Let's rock this party Let's rock this party</div>
+        </div>
+        <div class="song-card-play"></div>
+    </div>
+</body>
+</html>
