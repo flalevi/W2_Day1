@@ -6,12 +6,41 @@
     <title>The tales of Beedle the Bard</title>
     <style>
         main > div p {
-    color: rgb(247, 162, 58);    
-    }
+             color: rgb(247, 162, 58);    
+         }
 
-    input + label {
-    color: rgb(92, 162, 242);    
-    }
+        main {
+            position: relative;
+         }
+
+        input + label {
+            color: rgb(92, 162, 242);    
+        }
+            
+        a[target="_blank"] {
+            color: rgb(18, 118, 40);    
+        }
+
+        a:hover {
+            background-color: rgb(172, 239, 186);    
+        }
+
+        a:focus {
+            background-color: rgb(13, 78, 27);  
+            color:rgb(172, 239, 186);
+        }
+
+        main::before {
+            content: "";
+            background-color: rosybrown;
+            display: block; 
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +55,14 @@
         <p>Paragragh 5</p> 
         <input type="text"/>
         <label>I'm a label</label>
-
+        <a href="http://strive-school" target="_blank">Strive School</a>
+        <a href="http://google.com">Google</a>
+        <div>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
     </main>
 </body>
 </html>
